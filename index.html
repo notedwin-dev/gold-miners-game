@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄金矿工 - 优化版</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background particles -->
+    <div class="particles-container"></div>
+    
+    <div class="game-container">
+        <div class="game-header">
+            <h1 class="game-title">黄金矿工</h1>
+            <div class="diamond-info">
+                <div>钻石余额：</div>
+                <div class="diamond-count">
+                    <span id="diamond-count">10000</span>
+                    <span class="diamond-icon"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mine-grid" id="mine-grid">
+            <!-- 第一行 -->
+            <div class="grid-cell" id="cell-1">
+                <div class="gold-nugget" data-multiplier="0.05">x0.05</div>
+            </div>
+            <div class="grid-cell" id="cell-2">
+                <div class="gold-nugget" data-multiplier="100">x100</div>
+            </div>
+            <div class="grid-cell" id="cell-3">
+                <div class="gold-nugget" data-multiplier="0.5">x0.5</div>
+            </div>
+            
+            <!-- 第二行 -->
+            <div class="grid-cell" id="cell-4">
+                <div class="gold-nugget" data-multiplier="50">x50</div>
+            </div>
+            <div class="grid-cell center-cell" id="cell-center">
+                <div class="center-image"></div>
+            </div>
+            <div class="grid-cell" id="cell-6">
+                <div class="gold-nugget" data-multiplier="10">x10</div>
+            </div>
+            
+            <!-- 第三行 -->
+            <div class="grid-cell" id="cell-7">
+                <div class="gold-nugget" data-multiplier="5">x5</div>
+            </div>
+            <div class="grid-cell" id="cell-8">
+                <div class="gold-nugget" data-multiplier="25">x25</div>
+            </div>
+            <div class="grid-cell" id="cell-9">
+                <div class="gold-nugget" data-multiplier="0.8">x0.8</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="mine-btn" id="mine-1">
+                <i class="fas fa-shovel"></i> 挖1次
+                <span class="cost">消耗: 100钻石</span>
+            </button>
+            <button class="mine-btn" id="mine-10">
+                <i class="fas fa-shovel"></i> 挖10次
+                <span class="cost">消耗: 1000钻石</span>
+            </button>
+            <button class="mine-btn" id="mine-100">
+                <i class="fas fa-shovel"></i> 挖100次
+                <span class="cost">消耗: 10000钻石</span>
+            </button>
+        </div>
+        
+        <div class="result-area" id="result-area">
+            <div class="result-text">点击上方按钮开始挖矿！</div>
+            <div class="reward-text">每次挖矿消耗100钻石</div>
+        </div>
+        
+        <div class="history">
+            <div class="history-title">挖矿记录</div>
+            <div id="history-list"></div>
+        </div>
+    </div>
+    
+    <!-- Results Popup -->
+    <div class="popup-overlay" id="results-popup">
+        <div class="popup-container">
+            <button class="popup-close" id="popup-close">&times;</button>
+            <h2 class="popup-title" id="popup-title">挖矿结果</h2>
+            
+            <div class="results-summary">
+                <div class="summary-row">
+                    <span class="summary-label">挖矿次数:</span>
+                    <span class="summary-value" id="summary-count">0</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">总消耗:</span>
+                    <span class="summary-value" id="summary-cost">0 钻石</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">总获得:</span>
+                    <span class="summary-value" id="summary-reward">0 钻石</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">净收益:</span>
+                    <span class="summary-value" id="summary-net">0 钻石</span>
+                </div>
+            </div>
+            
+            <h3 class="popup-title" style="font-size: 24px; margin-bottom: 15px;">详细结果</h3>
+            <div class="results-grid" id="results-grid">
+                <!-- Results will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
