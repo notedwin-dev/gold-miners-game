@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 调整后的金矿倍率和概率 - 使各倍数更均衡
   const multipliers = [
-    { value: 0.05, prob: 20.00, reward: 5 },
-    { value: 0.5, prob: 25.00, reward: 50 },
-    { value: 0.8, prob: 15.00, reward: 80 },
-    { value: 5, prob: 12.00, reward: 500 },
-    { value: 10, prob: 10.00, reward: 1000 },
-    { value: 25, prob: 8.00, reward: 2500 },
-    { value: 50, prob: 7.00, reward: 5000 },
-    { value: 100, prob: 3.00, reward: 10000 }
+    { value: 0.05, prob: 36.18, reward: 5 },
+    { value: 0.5, prob: 44.06, reward: 50 },
+    { value: 0.8, prob: 10.00, reward: 80 },
+    { value: 5, prob: 3.32, reward: 500 },
+    { value: 10, prob: 2.19, reward: 1000 },
+    { value: 25, prob: 1.35, reward: 2500 },
+    { value: 50, prob: 0.55, reward: 5000 },
+    { value: 100, prob: 0.25, reward: 10000 }
   ];
 
   // 外圈格子的顺时针顺序
